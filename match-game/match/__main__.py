@@ -2,6 +2,7 @@ import constants
 
 from game.casting.cast import Cast
 from game.casting.combination import Combination
+from game.casting.user_comb import User_comb
 from game.casting.score import Score
 from game.scripting.script import Script
 from game.scripting.control_actors_action import ControlActorsAction
@@ -20,7 +21,7 @@ def main():
     # create the cast
     cast = Cast()
     cast.add_actor("combination", Combination())
-    cast.add_actor("user_comb", get_user_comb())
+    cast.add_actor("user_comb", User_comb()) 
     cast.add_actor("scores", Score())
    
     # start the game
@@ -30,7 +31,7 @@ def main():
     script = Script()
     script.add_action("input", ControlActorsAction(keyboard_service))
     script.add_action("update", MoveActorsAction())
-    script.add_action("update", compareCombAction()) 
+    script.add_action("update", CompareCombAction())   
     script.add_action("output", DrawActorsAction(video_service))
     
     director = Director(video_service)

@@ -28,7 +28,7 @@ class DrawActorsAction(Action):
         """
         score = cast.get_first_actor("scores")
         combination = cast.get_first_actor("combination")
-        user_comb = cast.get_first_actor("user_comb")
+        user_comb = cast.get_first_actor("user_comb") 
         messages = cast.get_actors("messages")
 
         self._video_service.clear_buffer()
